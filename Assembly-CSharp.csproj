@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoundryLimit.cs" />
      <Compile Include="Assets\Scripts\EvilCube.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\RTSPlayerController.cs" />
      <Compile Include="Assets\Scripts\SpawnPoint.cs" />
  <Reference Include="Unity.Timeline.Editor">
