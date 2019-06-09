@@ -8,6 +8,7 @@ public class EvilCube : MonoBehaviour
     public NavMeshAgent agent;
     public Transform target;
 
+
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
