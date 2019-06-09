@@ -18,4 +18,9 @@ public class EvilCube : MonoBehaviour
     {
         agent.SetDestination(target.position);
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Destroy(other.gameObject);
+    //}
 }

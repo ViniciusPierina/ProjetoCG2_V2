@@ -5,14 +5,22 @@ using UnityEngine.AI;
 
 public class RTSPlayerController : MonoBehaviour
 {
+
 	public Camera playerCamera;
 	public Vector3 cameraOffset;
 	public GameObject targetIndicatorPrefab;
 	NavMeshAgent agent;
 	GameObject targetObject;
 
-	// Use this for initialization
-	void Start()
+    public GameObject arrow; 
+    public Transform shotSpawn;
+    public float fireRate;
+    public float speed = 100f;
+
+    private float nextFire;
+
+    // Use this for initialization
+    void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		//Instantiate click target prefab
@@ -43,6 +51,16 @@ public class RTSPlayerController : MonoBehaviour
 		{
 			MoveToTarget(Input.mousePosition);
 		}
+
+        if(Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            GameObject shoot =  Instantiate(arrow, shotSpawn.position, shotSpawn.rotation) as GameObject;
+            shoot.transform.localScale = new Vector3(shotSpawn.localScale.x, shotSpawn.localScale.y, shotSpawn.localScale.z);
+            Rigidbody arrowShot = shoot.GetComponent<Rigidbody>();
+            arrowShot.AddForce(Vector3.forward * speed);
+
+        }
 #endif
 
 		//Camera follow
@@ -61,8 +79,8 @@ public class RTSPlayerController : MonoBehaviour
 		{
 			agent.destination = hit.point;
 
-			//Show marker where we clicked
-			if (targetObject)
+            //Show marker where we clicked
+            if (targetObject)
 			{
 				targetObject.transform.position = agent.destination;
 				targetObject.SetActive(true);
