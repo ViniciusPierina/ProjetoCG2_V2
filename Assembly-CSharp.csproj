@@ -56,10 +56,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoundryLimit.cs" />
+     <Compile Include="Assets\Scripts\ClickToMove.cs" />
      <Compile Include="Assets\Scripts\EvilCube.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\RTSPlayerController.cs" />
      <Compile Include="Assets\Scripts\SpawnPoint.cs" />
+     <None Include="Assets\ToonSoldiers_WW2_demo\ToonSoldiers_WW2_demo_README.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Cliente/Desktop/facul/CG2/proj mod2/ProjetoCG2_V2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
