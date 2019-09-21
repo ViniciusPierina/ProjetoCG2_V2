@@ -18,7 +18,7 @@ public class ProjectileMove : MonoBehaviour
     {
         if (speed != 0)
         {
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            transform.position -= (transform.right) * (speed * Time.deltaTime);
         }
         else
         {

@@ -24,10 +24,14 @@ public class ShootScript : MonoBehaviour
     void SpawnArrow()
     {
         nextFire = Time.time + fireRate;
-        GameObject shoot = Instantiate(projectile, shotSpawn.position, shotSpawn.rotation) as GameObject;
+        GameObject shoot = Instantiate(projectile, shotSpawn.position, mouse.GetRotation()) as GameObject;
+        
         if(mouse != null)
         {
             shoot.transform.localRotation = mouse.GetRotation();
+            //shoot.transform.rotation = mouse.GetRotation();
+
+            shoot.transform.Rotate(0, 90, 0, Space.World);
         }
     }
 }
